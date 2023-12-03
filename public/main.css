@@ -1,0 +1,111 @@
+/*Desarrollado de Ariel Renyinski*/
+/*4 As de Poker, al Hacer hover sobre cada carta hace una rotacion de -6 grados*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ 
+    background: rgb(255,219,21);
+    background: radial-gradient(circle, rgba(255,219,21,1) 0%, rgba(66,66,66,1) 0%, rgba(19,19,19,1) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mesaAS{ /*Seccion*/
+    display: flex;
+    justify-items: center;
+    background: rgb(255,219,21);
+    background: radial-gradient(circle, rgba(255,219,21,1) 0%, rgb(19, 19, 19) 0%, rgba(84,84,84,1) 100%);
+    padding: 2.5em;
+    border-radius: 25%;
+    box-shadow: 0px -1px 1px 1px #6464649f;
+    border: solid 1px rgb(48, 31, 16);
+
+}
+.container{ /*Contenedor de las cartas*/
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: rgb(255,219,21);
+    background: radial-gradient(circle, rgba(255,219,21,1) 0%, rgba(144,94,51,1) 0%, rgb(71, 47, 26) 100%);
+    padding: 4em;
+    border-radius: 25%;
+    border: solid 1px rgb(65, 64, 64);
+    box-shadow: 0px -2px 2px 3px #0c0c0c9f;
+}
+
+.card{ /*carta*/
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 300px;
+    background: #fafafa;
+    border-radius: 8px;
+    transition: 400ms ease-in-out;
+    box-shadow: 0 4px 6px 0 #0505057c; /*Sombra de la carta*/
+}
+
+.card:nth-child(2n+1){ /*Posiciones impares de las cartas*/
+    color: #990013; /*Color de la letra A*/
+}
+
+.card:nth-child(2n){ /*Posiciones pares de las cartas*/
+    color: #000; /*Color de la letra A*/
+}
+
+.card + .card{
+    margin-left: -10px; /*espacio entre las cartas*/
+}
+
+.card:hover{
+    transform: rotate(-6deg);/*Rotacion al tener el mouse */
+}
+
+.card:hover ~ .card { 
+    z-index: 1; /*Superponer la carta seleccionado*/
+    translate: 30px;
+}
+
+.card > .img_big{ /*Icono central de la carta*/
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-self: center;
+    margin: 0 auto; /*Horizontal centrado*/
+}
+
+.izquierdo , .derecho{ /*Margen izquierdo y derecho de la carta (Letra A e Icono)*/
+    display: flex;
+    flex-direction: column;
+    margin: 4px auto;
+}
+
+.derecho{
+    transform: rotate(180deg); /*Rotacion de 180 Grados, para que el Icono y la letra, queden invertidas */
+}
+
+h2{
+    font-size: 35px; /*Letra A de la carta*/
+}
+
+.izquierdo , .derecho > .img_small{ /*estilos del Icono ubicado debajo de la letra A*/
+    width: 25px;
+    height: auto;
+}
+
+
+
+
+@media only screen and (max-width: 992px) and (orientation:portrait){
+
+
+    
+}
+
+
+
